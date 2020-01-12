@@ -1,0 +1,24 @@
+/* Custom font */
+@font-face {
+    font-family: aileron-bold;
+    src: url('../fonts/aileron/Aileron-Bold.otf');
+}
+
+/* Custom font */
+@font-face {
+    font-family: aileron;
+    src: url('../fonts/aileron/Aileron-Regular.otf');
+}
+
+/* Custom font */
+@font-face {
+    font-family: aileron-thin;
+    src: url('../fonts/aileron/Aileron-Thin.otf');
+}
+
+/* Custom font */
+@font-face {
+    font-family: aileron-light;
+    src: url('../fonts/aileron/Aileron-Light.otf');
+}
+
