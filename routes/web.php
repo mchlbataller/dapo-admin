@@ -11,10 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/logout', 'Auth\LoginController@logout')->name('logout' );
 Auth::routes();
+
+Route::get('/', 'CustomRegisterController@index')->name('/' );
+Route::get('/login', 'CustomRegisterController@login')->name('login' );
+Route::post('/register/submit', 'CustomRegisterController@submit')->name('registerSubmit' );
 
 Route::get('/home', 'HomeController@index')->name('home');

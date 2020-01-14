@@ -28,8 +28,8 @@
                     @csrf
 
                     <div class="form-group">
-                        <input type="text" name="email" id="email-input" placeholder="Email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}">
-                        @error('email')
+                        <input type="text" name="username" id="username-input" placeholder="username" class="form-control @error('username') is-invalid @enderror" value="{{ old('username') }}">
+                        @error('username')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
@@ -46,19 +46,8 @@
                         @enderror
                     </div>
     
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" {{ old('remember') ? 'checked' : '' }}>
-                        <label class="form-check-label" for="defaultCheck1">
-                          This is my computer
-                        </label>
-                    </div>
-
-                    @if (Route::has('password.request'))
-                        <a type="submit" href="{{ route('password.request') }}" class="forgot">Forgot your password?</a><br>
-                    @endif
 
                     <button type="submit" class="btn btn-primary log-in-btn">Log In</button>
-                    <button type="submit" class="btn btn-outline-success sign-up-btn">Sign Up</button>
 
                 </form>
     
