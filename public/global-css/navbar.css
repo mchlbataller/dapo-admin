@@ -1,0 +1,179 @@
+body {
+    background: #edf9ff;
+}
+
+nav.navbar {
+    background: #ffffffb0;
+    padding: 15px 45px 15px 40px;
+    z-index: 1;
+    margin-left: 50px;
+}
+
+p.title-banner {
+    position: absolute;
+    margin-left: 255px;
+    font-family: Segoe UI Light;
+    font-size: 20pt;
+}
+
+/* The side navigation menu */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 50px;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: hsla(194, 30%, 95%, 1);
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.2s /* 0.5 second transition effect to slide in the sidenav */;
+    /* font-size: 20pt; */
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 10px 8px 10px 9px;
+    text-decoration: none;
+    font-size: 18pt;
+    transition: 0.3s;
+    overflow-x: hidden;
+    white-space: nowrap;
+    font-family: Segoe UI Light;
+    line-height: 50px;
+}
+
+/* When your mouse over the navigation links, change their color */
+.sidenav a:hover {
+    color: #d4d4d4;
+
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+/* Active window */
+.s-active {
+    background: linear-gradient(90deg, #0d2058, #27acc1ab);
+    color: white;
+}
+
+.s-nav-link {
+    font-size: 12pt;
+    padding-left: 15px;
+    padding-right: 500px;
+    font-family: Nunito;
+}
+
+.spacer {
+    background: white;
+    width: 20px;
+    margin: 0px 5px 0px -9px;
+    padding: 7px 2px 7px 2px;
+}
+
+button.btn {
+    margin: -40px 0px 36vh 3px;
+    position: initial;
+}
+
+.dropbtn {
+    outline: no;
+    background-color: #3498DB;
+    color: white;
+    width: 40px;
+    height: 40px;
+    margin-top: 3px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  right: 0;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd}
+
+.show {display:block;}
+
+.notification ,.messages{
+  color: white;
+  text-decoration: none;
+  padding: 5px 16px;
+  margin-top: 3px;
+  margin-right: 30px;
+  position: relative;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.notification:hover ,.messages:hover {
+  background: #d0d0d0;
+}
+
+.notification .badge ,.messages .badge {
+  position: absolute;
+  top: -10px;
+  right: -8px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  background:#33333e;
+  color: white;
+}
+
+.fa-book {
+  padding-left: 4px;
+  padding-right: 2px;
+}
+
+.navbar {
+    -webkit-transition: all 0.6s ease-out;
+    -moz-transition: all 0.6s ease-out;
+    -o-transition: all 0.6s ease-out;
+    -ms-transition: all 0.6s ease-out;
+    transition: all 0.6s ease-out;
+}
+
+.navbar.scrolled {
+    background: rgb(255, 255, 255); /* IE */
+    background: rgba(255, 255, 255, 0.78); /* NON-IE */
+}
+
+.container.cards {
+    width: 83%;
+}
+
+a.invoice {
+    padding-left: 15px;
+}
+
+a.s-inactive {
+    background: hsla(212, 100%, 93%, 1);
+    color: hsla(0, 0%, 54%, 1);
+}

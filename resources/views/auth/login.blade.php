@@ -1,73 +1,75 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ asset('global-css/bootstrap.css') }}">
+    <link rel="stylesheet" href="css/login.css?v=<?php echo rand(); ?>">
+    <link rel="stylesheet" href="global-css/fonts.css">
+    <title>Log In to assess.io</title>
+</head>
+<body>
+    <div class="row body">
+        <div class="col-sm-7" id="particles-js">
+            <p class="pre-header">Welcome to</p>
+            <h1 class="title-header">dapo Control Page</h1>
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+            <p class="desc"> Only authorized users are allowed beyond this point.  
+            </p>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
+        </div>
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+        <div class="col">
+            <div class="container login">
+                <h2 class="sign-in">Sign in to <span class="site">dapo-admin</span></h2>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                <form action="{{ route('login') }}" method="POST">
+                    @csrf
 
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+                    <div class="form-group">
+                        <input type="text" name="email" id="email-input" placeholder="Email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}">
+                        @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="password" name="password" id="pw" placeholder="Password" class="form-control @error('password') is-invalid @enderror">
+                        @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+    
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" {{ old('remember') ? 'checked' : '' }}>
+                        <label class="form-check-label" for="defaultCheck1">
+                          This is my computer
+                        </label>
+                    </div>
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                    @if (Route::has('password.request'))
+                        <a type="submit" href="{{ route('password.request') }}" class="forgot">Forgot your password?</a><br>
+                    @endif
 
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+                    <button type="submit" class="btn btn-primary log-in-btn">Log In</button>
+                    <button type="submit" class="btn btn-outline-success sign-up-btn">Sign Up</button>
 
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
-                </div>
+                </form>
+    
+                <p class="footer-credits">Copyright ©2020 <br>Login Page Design by Michael C. Bataller. All rights reserved.</p>
             </div>
+
+
         </div>
     </div>
-</div>
-@endsection
+    <script src="js/particles.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>
