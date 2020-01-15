@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="{{ asset('global-css/bootstrap.css') }}">
     <link rel="stylesheet" href="css/login.css?v=<?php echo rand(); ?>">
     <link rel="stylesheet" href="global-css/fonts.css">
-    <title>Log In to assess.io</title>
+    <title>DAPO | Login</title>
 </head>
 <body>
     <div class="row body">
         <div class="col-sm-7" id="particles-js">
             <p class="pre-header">Welcome to</p>
-            <h1 class="title-header">dapo Control Page</h1>
+            <h1 class="title-header">DAPO Control</h1>
 
             <p class="desc"> Only authorized users are allowed beyond this point.  
             </p>
@@ -22,13 +22,13 @@
 
         <div class="col">
             <div class="container login">
-                <h2 class="sign-in">Sign in to <span class="site">dapo-admin</span></h2>
+                <h2 class="sign-in">Sign in to <span class="site">dapo-control</span></h2>
 
                 <form action="{{ route('login') }}" method="POST">
                     @csrf
 
                     <div class="form-group">
-                        <input type="text" name="username" id="username-input" placeholder="username" class="form-control @error('username') is-invalid @enderror" value="{{ old('username') }}">
+                        <input type="text" name="username" id="username-input" placeholder="Username" class="form-control @error('username') is-invalid @enderror" value="{{ old('username') }}">
                         @error('username')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
