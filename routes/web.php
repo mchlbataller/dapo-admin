@@ -19,3 +19,8 @@ Route::get('/login', 'CustomRegisterController@login')->name('login' );
 Route::post('/register/submit', 'CustomRegisterController@submit')->name('registerSubmit' );
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
